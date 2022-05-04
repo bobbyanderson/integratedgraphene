@@ -1,0 +1,41 @@
+
+<style="type/css">#set-height {
+  display: block;
+  height: 13500px;
+}
+#v0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+p { font-family helvetica;
+  font-size: 24px;
+}
+</style>
+
+<div id="set-height"></div>
+<p id="time"></p><video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+    <source type="video/mp4" codecs="avc1.42E01E, mp4a.40.2" src="https://github.com/bobbyanderson/integratedgraphene/blob/main/animation-test.mp4">
+    </source>
+    <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+</video>
+
+<script>
+// select video element
+var vid = document.getElementById('v0');
+//var vid = $('#v0')[0]; // jquery option
+
+// pause video on load
+vid.pause();
+ 
+// pause video on document scroll (stops autoplay once scroll started)
+window.onscroll = function(){
+    vid.pause();
+};
+
+// refresh video frames on interval for smoother playback
+setInterval(function(){
+    vid.currentTime = window.pageYOffset/400;
+}, 40);
+</script>
