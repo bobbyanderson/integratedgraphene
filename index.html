@@ -7,9 +7,10 @@
 
 
 <style>
-  
+
+  body { background:#000; }
 #set-height { display: block; height: 13500px;}
-#v0 { position: fixed; top: 0; left: 0; width: 100%; }
+#v0 { position: fixed; top: 0; left: 0; right:0; bottom:0; height:auto; width: 100%; }
 p { font-family helvetica; font-size: 24px;}
   
 </style>
@@ -18,8 +19,7 @@ p { font-family helvetica; font-size: 24px;}
 <p id="time"></p><video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
   <source type="video/webm" src="https://bobbyanderson.github.io/integratedgraphene/animation-test.webm"></source>
   <source type="video/ogg" src="https://bobbyanderson.github.io/integratedgraphene/animation-test.ogv"></source>
-    <source type="video/mp4" src="https://bobbyanderson.github.io/integratedgraphene/animation-test.mp4">
-    </source>
+    <source type="video/mp4" src="https://bobbyanderson.github.io/integratedgraphene/animation-test.mp4"></source>
     <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
 </video>
 
@@ -38,8 +38,8 @@ window.onscroll = function(){
 
 // refresh video frames on interval for smoother playback
 setInterval(function(){
-    vid.currentTime = window.pageYOffset/400;
-}, 40);
+    vid.currentTime = window.pageYOffset/240;
+}, 24);
 </script>
 
   </body>
